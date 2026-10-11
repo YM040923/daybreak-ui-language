@@ -1,0 +1,62 @@
+name: Daybreak UI Language
+version: 0.1.0
+role: visual-language
+audience:
+  - developer-tools
+  - ssh-clients
+  - server-managers
+  - desktop-and-mobile-utilities
+primary:
+  visual_language:
+    - warm-light-environment
+    - restrained-high-opacity-surfaces
+    - orange-action-accent
+    - rounded-hierarchy
+    - quiet-feedback
+  state_semantics:
+    - explicit-connection-states
+    - latency-bands
+    - normal-loading-empty-offline-error-disabled-recovery
+  platform_behavior:
+    windows:
+      navigation: rail-or-sidebar
+      layout: multi-column-workbench
+    android:
+      navigation: bottom-navigation
+      layout: thumb-first-single-column
+borrow:
+  - spatial-hierarchy
+  - surface-materiality
+  - component-state-feedback
+  - platform-composition
+preserve:
+  - target-information-architecture
+  - target-routes-and-entry-points
+  - target-data-semantics
+  - terminal-and-code-readability
+  - platform-native-input
+avoid:
+  - orange-everywhere
+  - card-everything
+  - transparent-terminal
+  - color-only-status
+  - decorative-english
+  - copied-business-structure
+  - desktop-shrunk-to-mobile
+composition:
+  rule: one-primary-visual-language
+  secondary-references: named-dimensions-only
+  priority:
+    - product-function
+    - platform-and-accessibility
+    - user-explicit-request
+    - primary-language-tokens
+    - secondary-reference-details
+    - decoration
+inspiration:
+  - name: Orange Cloud
+    url: https://github.com/YM040923/orange-cloud
+    use: visual-study
+  - name: MaidKit
+    url: https://github.com/Solsynth/MaidKit
+    use: first-practical-case-study

@@ -8,6 +8,8 @@ Read this style as:
 
 > A light-first developer-tool workspace with warm environmental depth, restrained surfaces, meaningful density, status-aware components, and platform-native layouts.
 
+Start with [design-profile.yaml](design-profile.yaml) when you need a machine-readable summary.
+
 ## Before editing the target project
 
 Answer these questions from the target codebase:
