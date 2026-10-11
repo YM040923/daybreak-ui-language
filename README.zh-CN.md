@@ -23,6 +23,20 @@ Daybreak 是一套面向开发者工具、SSH 客户端、服务器管理器、�
 - 不是把手机页面放大到 Windows。
 - 不是复制 Orange Cloud 的页面和业务结构。
 
+## MaidKit 实际 Windows 界面参考
+
+下面的图片来自这套设计语言实际应用到 MaidKit 后的 Windows 界面，不是仓库里另外编写的 Demo：
+
+| 仪表盘 | 活动监控 |
+| --- | --- |
+| ![MaidKit Daybreak 仪表盘](screenshots/dashboard.png) | ![MaidKit Daybreak 活动监控](screenshots/activity.png) |
+
+| 资产与 GitHub | 项目空状态 |
+| --- | --- |
+| ![MaidKit Daybreak 资产页](screenshots/assets.png) | ![MaidKit Daybreak 项目空状态](screenshots/projects.png) |
+
+这些图片用于帮助人和 Codex 理解真实的视觉结果；零依赖 Demo 仍然用于验证组件状态和响应式行为。图片来源和页面说明见 [screenshots/README.md](screenshots/README.md)。
+
 ## 运行 Demo
 
 Demo 零依赖，不需要安装前端框架：

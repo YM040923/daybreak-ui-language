@@ -30,6 +30,20 @@ It is **not**:
 - A dashboard replacement.
 - A copy of Orange Cloud's routes, data model, or business structure.
 
+## Real MaidKit reference screens
+
+These screenshots come from the Windows MaidKit Daybreak build that this language was designed around:
+
+| Dashboard | Activity |
+| --- | --- |
+| ![MaidKit Daybreak dashboard](screenshots/dashboard.png) | ![MaidKit Daybreak activity](screenshots/activity.png) |
+
+| Assets and GitHub | Projects empty state |
+| --- | --- |
+| ![MaidKit Daybreak assets](screenshots/assets.png) | ![MaidKit Daybreak projects](screenshots/projects.png) |
+
+They are reference material for the visual language, not a replacement for the runnable demo. See [screenshots/README.md](screenshots/README.md) for the source and scope of each image.
+
 ## Use the demo
 
 The demo has no build step and no dependency.
