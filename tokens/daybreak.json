@@ -1,0 +1,42 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "daybreak",
+  "description": "Light-first, warm, state-aware tokens for developer-tool interfaces.",
+  "color": {
+    "accent": "#F48120",
+    "accentPressed": "#C96616",
+    "daylightTop": "#FFE8D1",
+    "daylightMiddle": "#FCF2E3",
+    "daylightBottom": "#F5F4F0",
+    "ink": "#2A2018",
+    "muted": "#756457",
+    "line": "#E5CDBB",
+    "surface": "rgba(255, 255, 255, 0.84)",
+    "surfaceSoft": "rgba(255, 248, 242, 0.64)",
+    "terminal": "#14120F",
+    "success": "#247A55",
+    "warning": "#A66A13",
+    "danger": "#B84436",
+    "offline": "#7D746D"
+  },
+  "radius": {
+    "island": "24px",
+    "control": "16px",
+    "compact": "10px",
+    "pill": "999px"
+  },
+  "space": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "8": "32px",
+    "10": "40px"
+  },
+  "shadow": {
+    "island": "0 18px 42px rgba(96, 58, 30, 0.14)"
+  }
+}
+

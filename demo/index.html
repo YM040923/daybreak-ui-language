@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daybreak UI Language interactive reference demo">
+  <title>Daybreak UI Language Demo</title>
+  <link rel="stylesheet" href="../tokens/daybreak.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Daybreak UI Language</p>
+      <h1>温暖的工作空间，清晰的真实状态。</h1>
+      <p class="intro">一个零依赖的参考 Demo。切换页面、连接状态和延迟阶段，观察同一套语言如何适配真实工作流。</p>
+    </div>
+    <div class="header-actions">
+      <a class="quiet-link" href="../README.zh-CN.md">阅读规范</a>
+      <button class="outline-button" id="densityToggle" type="button">切换紧凑度</button>
+    </div>
+  </header>
+
+  <main class="app-shell" id="appShell">
+    <aside class="rail" aria-label="主导航">
+      <div class="brand-mark" aria-label="Daybreak">D</div>
+      <button class="rail-item active" data-page="servers" type="button"><span class="rail-icon">⌂</span><span>服务器</span></button>
+      <button class="rail-item" data-page="assets" type="button"><span class="rail-icon">◫</span><span>资产</span></button>
+      <button class="rail-item" data-page="projects" type="button"><span class="rail-icon">□</span><span>项目</span></button>
+      <button class="rail-item" data-page="snippets" type="button"><span class="rail-icon">&lt;/&gt;</span><span>脚本</span></button>
+      <button class="rail-item" data-page="agent" type="button"><span class="rail-icon">✦</span><span>Agent</span></button>
+      <div class="rail-spacer"></div>
+      <button class="rail-item" data-page="settings" type="button"><span class="rail-icon">⚙</span><span>设置</span></button>
+    </aside>
+
+    <section class="workspace">
+      <div class="workspace-topbar">
+        <div class="topbar-title"><span class="window-dot"></span><span>MaidKit / Daybreak case study</span></div>
+        <div class="topbar-meta"><span id="topbarState">状态：已连接</span><span class="separator">·</span><span>本地示例数据</span></div>
+      </div>
+
+      <div class="workspace-content">
+        <section class="page is-visible" data-page-view="servers">
+          <div class="page-heading">
+            <div><p class="eyebrow">Feature island / servers</p><h2>服务器</h2><p>连接、监控并打开终端工作区。</p></div>
+            <button class="primary-button" type="button">＋ 添加服务器</button>
+          </div>
+          <div class="server-layout">
+            <article class="feature-island server-card">
+              <div class="card-heading">
+                <div class="resource-icon">S</div>
+                <div><h3>美国三区</h3><p>root@70.39.198.142:44842</p></div>
+                <span class="state-dot healthy" id="serverConnectionDot" aria-label="在线"></span>
+              </div>
+              <div class="metric-grid" id="serverMetrics">
+                <div class="metric-tile"><span>平均负载</span><strong>0.18</strong><small>空闲</small></div>
+                <div class="metric-tile"><span>内存</span><strong>68%</strong><div class="meter"><i style="width:68%"></i></div></div>
+                <div class="metric-tile"><span>运行时间</span><strong>34d</strong><small>稳定运行</small></div>
+              </div>
+              <div class="server-meta" id="serverMeta"><span>Debian GNU/Linux 12</span><span>更新于刚刚</span></div>
+              <div class="connection-notice" id="connectionNotice" hidden></div>
+              <div class="latency-row" id="latencyRow">
+                <div class="status-leading"><span class="state-dot" id="latencyDot"></span><strong id="latencyValue">24 ms</strong></div>
+                <div class="latency-copy"><b id="latencyLabel">响应顺畅</b><span id="latencyHint">适合日常终端操作</span></div>
+                <button class="text-button" id="latencyAction" type="button">重新检测</button>
+              </div>
+              <div class="card-actions"><button class="primary-button wide" type="button">打开终端</button><button class="icon-button" type="button" aria-label="打开文件">↗</button></div>
+            </article>
+
+            <article class="feature-island status-lab">
+              <div class="section-heading"><div><p class="eyebrow">State lab</p><h3>连接状态</h3></div><span class="small-note">切换查看</span></div>
+              <div class="state-options" role="group" aria-label="连接状态">
+                <button class="state-option active" data-connection="connected" type="button"><span class="state-dot healthy"></span>已连接</button>
+                <button class="state-option" data-connection="connecting" type="button"><span class="state-dot connecting"></span>连接中</button>
+                <button class="state-option" data-connection="offline" type="button"><span class="state-dot offline"></span>未连接</button>
+                <button class="state-option" data-connection="error" type="button"><span class="state-dot danger"></span>连接失败</button>
+              </div>
+              <div class="state-explanation" id="stateExplanation"><strong>实时指标可用</strong><p>状态颜色、文案和动作一起表达连接结果。</p></div>
+              <div class="terminal-mini"><div><span class="prompt">root@prod-01</span>:~# systemctl status maidkit-agent</div><div class="terminal-success">● active (running)</div><div class="terminal-dim">last check: just now</div></div>
+            </article>
+          </div>
+          <div class="terminal-shell feature-island">
+            <div class="terminal-tabs"><span class="terminal-tab active"><i></i>prod-01</span><span class="terminal-tab">logs</span><span class="terminal-tab">deploy</span><span class="terminal-spacer"></span><button class="terminal-control" type="button">分屏</button><button class="terminal-control" type="button">＋</button></div>
+            <div class="terminal-body"><div><span class="prompt">root@prod-01</span>:~# docker ps</div><div>api-gateway&nbsp;&nbsp; Up 4 days</div><div>postgres&nbsp;&nbsp;&nbsp;&nbsp; Up 4 days <span class="terminal-success">healthy</span></div><div>redis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Up 4 days</div><br><div><span class="prompt">root@prod-01</span>:~# <span class="cursor"></span></div></div>
+          </div>
+        </section>
+
+        <section class="page" data-page-view="assets">
+          <div class="page-heading"><div><p class="eyebrow">Feature island / assets</p><h2>资产</h2><p>连接目标、凭据和外部服务统一管理。</p></div><button class="primary-button" type="button">＋ 添加资产</button></div>
+          <div class="list-layout"><div class="feature-island list-panel"><div class="list-row"><div class="resource-icon">S</div><div><h3>美国三区</h3><p>SSH · root · 44842</p></div><span class="tag">本地加密</span><button class="icon-button" type="button" aria-label="编辑">⋯</button></div><div class="list-row"><div class="resource-icon">S</div><div><h3>日本</h3><p>SSH · root · 22</p></div><span class="tag">本地加密</span><button class="icon-button" type="button" aria-label="编辑">⋯</button></div><div class="list-row"><div class="resource-icon">G</div><div><h3>GitHub</h3><p>Actions、Pull Request 和 Releases</p></div><span class="tag neutral">未连接</span><button class="icon-button" type="button" aria-label="编辑">⋯</button></div></div><div class="feature-island callout"><span class="callout-icon">⌁</span><h3>凭据金库</h3><p>凭据保存在本地加密金库中，不会因为视觉层变化而改变安全边界。</p><button class="outline-button" type="button">查看金库设置</button></div></div>
+        </section>
+
+        <section class="page" data-page-view="projects">
+          <div class="page-heading"><div><p class="eyebrow">Feature island / projects</p><h2>项目</h2><p>把服务器、堆栈和服务组织成一个工作单元。</p></div><button class="primary-button" type="button">＋ 新建项目</button></div>
+          <div class="empty-state feature-island"><div class="empty-orb">□</div><h3>还没有管理项目</h3><p>空状态也要说明下一步，而不是只留下大片空白。</p><div class="button-row"><button class="primary-button" type="button">新建项目</button><button class="outline-button" type="button">导入 TOML</button></div></div>
+        </section>
+
+        <section class="page" data-page-view="snippets">
+          <div class="page-heading"><div><p class="eyebrow">Feature island / snippets</p><h2>脚本片段</h2><p>保存一次 Shell 脚本，在多个服务器上重复运行。</p></div><button class="primary-button" type="button">＋ 新建脚本</button></div>
+          <div class="snippet-grid"><article class="feature-island snippet-card"><span class="snippet-index">01</span><h3>检查服务</h3><p>systemctl --failed</p><button class="text-button" type="button">查看脚本 →</button></article><article class="feature-island snippet-card"><span class="snippet-index">02</span><h3>拉取日志</h3><p>journalctl -u nginx</p><button class="text-button" type="button">查看脚本 →</button></article><article class="feature-island snippet-card"><span class="snippet-index">03</span><h3>磁盘清理</h3><p>docker system prune</p><button class="text-button" type="button">查看脚本 →</button></article></div>
+        </section>
+
+        <section class="page" data-page-view="agent">
+          <div class="page-heading"><div><p class="eyebrow">Feature island / agent</p><h2>Agent 工作区</h2><p>让助手围绕真实服务器上下文工作。</p></div><span class="tag">需要确认的操作会停下来</span></div>
+          <div class="agent-layout feature-island"><div class="agent-intro"><div class="empty-orb">✦</div><h3>描述一个服务器任务</h3><p>例如：检查 nginx 为什么启动失败，助手会先读取已保存的服务器状态。</p></div><div class="prompt-row"><span>输入任务，例如：检查 nginx 启动失败的原因</span><button class="primary-button" type="button">发送</button></div></div>
+        </section>
+
+        <section class="page" data-page-view="settings">
+          <div class="page-heading"><div><p class="eyebrow">Feature island / settings</p><h2>设置</h2><p>外观可以改变，但功能语义和安全边界不变。</p></div></div>
+          <div class="feature-island settings-panel"><div class="settings-group"><div class="section-heading"><div><p class="eyebrow">Appearance</p><h3>外观</h3></div><span class="small-note">Daybreak baseline</span></div><div class="setting-row"><div><strong>主题</strong><p>跟随系统、浅色或深色。</p></div><div class="segmented"><button class="selected" type="button">浅色</button><button type="button">系统</button><button type="button">深色</button></div></div><div class="setting-row"><div><strong>工作区背景</strong><p>只在不影响可读性时使用背景图。</p></div><button class="switch off" type="button" aria-label="关闭工作区背景"></button></div></div><div class="settings-group"><div class="section-heading"><div><p class="eyebrow">Behavior</p><h3>行为</h3></div></div><div class="setting-row"><div><strong>启动时连接已保存服务器</strong><p>在解锁金库后保持连接以收集指标。</p></div><button class="switch on" type="button" aria-label="开启启动时连接"></button></div><div class="setting-row"><div><strong>隐藏服务器地址</strong><p>录屏或直播时只显示用户名。</p></div><button class="switch off" type="button" aria-label="关闭隐藏服务器地址"></button></div></div></div>
+        </section>
+      </div>
+      <nav class="mobile-nav" aria-label="移动导航"><button class="active" data-page="servers" type="button">服务器</button><button data-page="assets" type="button">资产</button><button data-page="projects" type="button">项目</button><button data-page="snippets" type="button">脚本</button><button data-page="agent" type="button">Agent</button><button data-page="settings" type="button">设置</button></nav>
+    </section>
+  </main>
+
+  <section class="state-inspector" aria-live="polite">
+    <div><p class="eyebrow">为什么这样变化</p><h2 id="inspectorTitle">状态驱动，而不是颜色驱动</h2></div>
+    <p id="inspectorText">当前展示健康连接和低延迟。状态组件同时使用数值、标签、形态和操作，避免用户只看到一个颜色。</p>
+  </section>
+  <script src="app.js"></script>
+</body>
+</html>
+
